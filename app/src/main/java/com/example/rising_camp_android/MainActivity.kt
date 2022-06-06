@@ -1,7 +1,8 @@
-package com.example.week1
+package com.example.rising_camp_android
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.rising_camp_android.R
 
 // 홈화면
 class MainActivity : AppCompatActivity() {

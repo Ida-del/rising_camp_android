@@ -1,4 +1,4 @@
-package com.example.week1
+package com.example.rising_camp_android
 
 import org.junit.Test
 

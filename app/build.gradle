@@ -7,7 +7,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "com.example.week1"
+        applicationId "com.example.rising_camp_android"
         minSdk 24
         targetSdk 32
         versionCode 1
