@@ -12,7 +12,7 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Week1"
+        android:theme="@style/Theme.RisingCampAndroid"
         tools:targetApi="31">
 
         <!--화면으로 보이는 UI -->
