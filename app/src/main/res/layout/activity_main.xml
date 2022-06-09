@@ -5,6 +5,7 @@
     android:id="@+id/root_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     tools:context=".MainActivity">
 
     <!--네이게이션바 영역 시작-->
@@ -66,248 +67,331 @@
                     android:id="@+id/user_profile"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:background="@drawable/border"
                     android:layout_margin="18dp"
-                    android:paddingBottom="20dp"
-                    >
+                    android:background="@drawable/border"
+                    android:orientation="vertical"
+                    android:paddingBottom="18dp">
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/sign_in"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="15dp"
-                        android:layout_marginRight="15dp"
-                        >
-                        <TextView
-                            android:id="@+id/text_1"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginBottom="-12dp"
+                        android:paddingLeft="15dp">
+
+                        <LinearLayout
+                            android:id="@+id/inbox_sign_in"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="가입하고, 초특가 혜택 받자!"
-                            android:textSize="12sp"
-                            app:layout_constraintStart_toStartOf="@id/sign_in"
-                            app:layout_constraintTop_toTopOf="@id/sign_in" />
-                        <TextView
-                            android:id="@+id/text_2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="로그인 및 회원가입 하기 〉"
-                            android:textColor="#0060BA"
-                            android:textSize="20sp"
-                            app:layout_constraintStart_toStartOf="@id/sign_in"
-                            app:layout_constraintTop_toBottomOf="@id/text_1" />
+                            android:orientation="vertical"
+                            app:layout_constraintBottom_toBottomOf="@+id/sign_in"
+                            app:layout_constraintStart_toStartOf="@+id/sign_in"
+                            app:layout_constraintTop_toTopOf="@+id/sign_in">
+
+                            <TextView
+                                android:id="@+id/text_1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="가입하고, 초특가 혜택 받자!"
+                                android:textSize="11sp" />
+
+                            <RelativeLayout
+                                android:id="@+id/blue_contents"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="1.8dp">
+
+                                <TextView
+                                    android:id="@+id/text_2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="로그인 및 회원가입 하기 "
+                                    android:textColor="#0060BA"
+                                    android:textSize="14sp" />
+
+                                <ImageView
+                                    android:id="@+id/img_arrow_blue"
+                                    android:layout_width="12dp"
+                                    android:layout_height="13dp"
+                                    android:layout_centerInParent="true"
+                                    android:layout_toEndOf="@+id/text_2"
+                                    android:src="@drawable/img_arrow_blue" />
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
                         <Button
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/btn_benefits"
+                            android:layout_width="66dp"
+                            android:layout_height="30dp"
+                            android:layout_marginVertical="20dp"
+                            android:layout_marginRight="15dp"
                             android:background="@drawable/btn_round_blue"
                             android:text="My 혜택"
                             android:textColor="#0061BC"
+                            android:textSize="12sp"
+                            app:layout_constraintBottom_toBottomOf="@+id/sign_in"
                             app:layout_constraintEnd_toEndOf="@id/sign_in"
-                            app:layout_constraintTop_toTopOf="@id/sign_in" />
+                            app:layout_constraintTop_toTopOf="@id/sign_in"
+                            tools:ignore="TouchTargetSizeCheck" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#ededed" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/my_point"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="15dp"
-                        >
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-12dp"
+                        android:padding="8dp">
+
+                        <RelativeLayout
+                            android:id="@+id/my_point_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/my_point"
+                            app:layout_constraintStart_toStartOf="@+id/my_point"
+                            app:layout_constraintTop_toTopOf="@+id/my_point">
+
+                            <ImageView
+                                android:id="@+id/img_point"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/img_point" />
+
+                            <TextView
+                                android:id="@+id/text_point"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_toEndOf="@+id/img_point"
+                                android:paddingLeft="6dp"
+                                android:text="포인트"
+                                android:textSize="13sp" />
+
+                        </RelativeLayout>
+
                         <ImageView
-                            android:id="@+id/img_point"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/img_point"
-                            app:layout_constraintLeft_toLeftOf="@id/my_point"
-                            app:layout_constraintTop_toTopOf="@id/my_point" />
-
-                        <TextView
-                            android:id="@+id/text_point"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:id="@+id/img_arrow_end"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="3dp"
-                            android:text="포인트"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toEndOf="@+id/img_point"
-                            app:layout_constraintTop_toTopOf="@+id/my_point" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="3dp"
-                            android:text="〉"
-                            android:textSize="18sp"
+                            android:src="@drawable/img_arrow_end"
+                            app:layout_constraintBottom_toBottomOf="@+id/my_point"
                             app:layout_constraintEnd_toEndOf="@+id/my_point"
                             app:layout_constraintTop_toTopOf="@id/my_point" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#ededed" />
+
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/my_coin"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="15dp">
+                        android:layout_marginTop="0dp"
+                        android:layout_marginBottom="-12dp"
+                        android:padding="8dp">
+
+                        <RelativeLayout
+                            android:id="@+id/my_coin_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/my_coin"
+                            app:layout_constraintStart_toStartOf="@+id/my_coin"
+                            app:layout_constraintTop_toTopOf="@+id/my_coin">
+
+                            <ImageView
+                                android:id="@+id/img_coin"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:src="@drawable/img_coin" />
+
+                            <TextView
+                                android:id="@+id/text_coin"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_toEndOf="@+id/img_coin"
+                                android:paddingLeft="6dp"
+                                android:text="야놀자 코인"
+                                android:textSize="13sp" />
+                        </RelativeLayout>
 
                         <ImageView
-                            android:id="@+id/img_coin"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/img_coin"
-                            app:layout_constraintLeft_toLeftOf="@id/my_coin"
-                            app:layout_constraintTop_toTopOf="@id/my_coin" />
-
-                        <TextView
-                            android:id="@+id/text_coin"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="3dp"
-                            android:text="야놀자 코인"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toEndOf="@+id/img_coin"
-                            app:layout_constraintTop_toTopOf="@+id/my_coin" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="3dp"
-                            android:text="〉"
-                            android:textSize="18sp"
+                            android:src="@drawable/img_arrow_end"
+                            app:layout_constraintBottom_toBottomOf="@+id/my_coin"
                             app:layout_constraintEnd_toEndOf="@+id/my_coin"
                             app:layout_constraintTop_toTopOf="@id/my_coin" />
                     </androidx.constraintlayout.widget.ConstraintLayout>
-
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#ededed" />
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/my_coupon"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="0dp"
+                        android:padding="8dp"
+                        android:layout_marginBottom="-12dp"
                         >
+                        <RelativeLayout
+                            android:id="@+id/my_coupon_left"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_margin="5dp"
+                            app:layout_constraintBottom_toBottomOf="@+id/my_coupon"
+                            app:layout_constraintStart_toStartOf="@+id/my_coupon"
+                            app:layout_constraintTop_toTopOf="@+id/my_coupon">
 
+                            <ImageView
+                                android:id="@+id/img_coupon"
+                                android:layout_width="27dp"
+                                android:layout_height="27dp"
+                                android:src="@drawable/img_coupon" />
+
+                            <TextView
+                                android:id="@+id/text_coupon"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_centerInParent="true"
+                                android:layout_toEndOf="@+id/img_coupon"
+                                android:paddingLeft="7dp"
+                                android:text="쿠폰함"
+                                android:textSize="13sp" />
+                        </RelativeLayout>
                         <ImageView
-                            android:id="@+id/img_coupon"
-                            android:layout_width="30dp"
-                            android:layout_height="30dp"
-                            android:src="@drawable/img_coupon"
-                            app:layout_constraintLeft_toLeftOf="@id/my_coupon"
-                            app:layout_constraintTop_toTopOf="@id/my_coupon" />
-
-                        <TextView
-                            android:id="@+id/text_coupon"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                            android:layout_width="12dp"
+                            android:layout_height="12dp"
                             android:layout_marginLeft="15dp"
                             android:layout_marginTop="3dp"
-                            android:text="쿠폰함"
-                            android:textSize="18sp"
-                            app:layout_constraintStart_toEndOf="@+id/img_coupon"
-                            app:layout_constraintTop_toTopOf="@+id/my_coupon" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="15dp"
-                            android:layout_marginTop="3dp"
-                            android:text="〉"
-                            android:textSize="18sp"
+                            android:src="@drawable/img_arrow_end"
+                            app:layout_constraintBottom_toBottomOf="@+id/my_coupon"
                             app:layout_constraintEnd_toEndOf="@+id/my_coupon"
                             app:layout_constraintTop_toTopOf="@id/my_coupon" />
+
                     </androidx.constraintlayout.widget.ConstraintLayout>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="10dp"
+                        android:background="#ededed" />
                     <androidx.constraintlayout.widget.ConstraintLayout
                         android:id="@+id/my_data"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_marginLeft="15dp"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginRight="15dp"
+                        android:layout_marginTop="0dp"
+                        android:padding="8dp"
+                        android:layout_marginBottom="-12dp"
                         >
-                        <LinearLayout
-                            android:id="@+id/my_data_1"
+                        <RelativeLayout
+                            android:id="@+id/my_data_1_left"
                             android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_margin="5dp"
                             app:layout_constraintBottom_toBottomOf="@+id/my_data"
-                            app:layout_constraintLeft_toLeftOf="@+id/my_data"
+                            app:layout_constraintStart_toStartOf="@+id/my_data"
+                            app:layout_constraintTop_toTopOf="@+id/my_data"
                             >
+
                             <ImageView
                                 android:id="@+id/img_review"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
                                 android:src="@drawable/img_review" />
 
                             <TextView
                                 android:id="@+id/text_review"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginTop="3dp"
+                                android:layout_centerInParent="true"
+                                android:layout_toEndOf="@+id/img_review"
+                                android:paddingLeft="7dp"
                                 android:text="나의 후기"
-                                android:paddingRight="10dp"
-                                android:textSize="18sp" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginTop="3dp"
-                                android:text="〉"
-                                android:textSize="18sp" />
-                        </LinearLayout>
-                        <LinearLayout
-                            android:id="@+id/my_data_2"
-                            android:layout_width="0dp"
+                                android:textSize="13sp" />
+
+                            <ImageView
+                                android:id="@+id/img_arrow_end_01"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="60sp"
+                                android:layout_toEndOf="@+id/text_review"
+                                android:src="@drawable/img_arrow_end" />
+                        </RelativeLayout>
+                        <RelativeLayout
+                            android:id="@+id/my_data_2_left"
+                            android:layout_width="wrap_content"
                             android:layout_height="match_parent"
+                            android:layout_margin="5dp"
                             app:layout_constraintBottom_toBottomOf="@+id/my_data"
+                            app:layout_constraintTop_toTopOf="@+id/my_data"
                             app:layout_constraintEnd_toEndOf="@+id/my_data"
-                            app:layout_constraintHorizontal_weight="0.5"
                             >
+
                             <ImageView
                                 android:id="@+id/img_liked"
-                                android:layout_width="30dp"
-                                android:layout_height="30dp"
-                                android:layout_marginLeft="5dp"
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
                                 android:src="@drawable/img_liked" />
+
                             <TextView
                                 android:id="@+id/text_liked"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginTop="3dp"
+                                android:layout_centerInParent="true"
+                                android:layout_toEndOf="@+id/img_liked"
+                                android:paddingLeft="7dp"
                                 android:text="찜"
-                                android:paddingRight="60dp"
-                                android:textSize="18sp" />
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginLeft="15dp"
-                                android:layout_marginTop="3dp"
-                                android:text="〉"
-                                android:textSize="18sp"
-                                />
-                        </LinearLayout>
+                                android:textSize="13sp" />
+
+                            <ImageView
+                                android:id="@+id/img_arrow_end_02"
+                                android:layout_width="12dp"
+                                android:layout_height="12dp"
+                                android:layout_centerVertical="true"
+                                android:layout_marginStart="90sp"
+                                android:layout_toEndOf="@+id/text_liked"
+                                android:src="@drawable/img_arrow_end" />
+
+                        </RelativeLayout>
                     </androidx.constraintlayout.widget.ConstraintLayout>
                 </LinearLayout>
 
-                <!--배너-->
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/img_banner"
                     >
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="70dp"
-                        android:src="@drawable/img_banner"
-                        app:layout_constraintTop_toTopOf="@+id/img_banner"
-                        app:layout_constraintStart_toStartOf="@+id/img_banner"
-                        />
+
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                <!--내역 영역 시작-->
+                <!--예약내역/줄서기이용/해외예약 영역 시작-->
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="70dp"
+                    android:src="@drawable/img_banner" />
+
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -326,8 +410,9 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:id="@+id/text_booking_his"
-                            android:paddingLeft="15dp"
+                            android:paddingLeft="13dp"
                             android:text="비회원 예약 내역"
+                            android:textSize="12sp"
                             />
                     </LinearLayout>
 
@@ -343,29 +428,34 @@
                             android:id="@+id/list_1"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:layout_marginLeft="10dp"
-                            android:layout_marginRight="15dp"
+
                             android:padding="12dp"
                             >
-                            <TextView
-                                android:id="@+id/text_list_1"
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:text="국내여행 통합 예약"
-                                android:textSize="18sp"
-                                app:layout_constraintStart_toStartOf="@+id/list_1"
-                                app:layout_constraintTop_toTopOf="@+id/list_1"
-                                />
 
-                            <TextView
+                            <RelativeLayout
+                                android:id="@+id/list_1_inbox"
                                 android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:text="〉"
-                                android:textSize="18sp"
+                                android:layout_height="match_parent"
                                 app:layout_constraintTop_toTopOf="@+id/list_1"
-                                app:layout_constraintStart_toEndOf="@+id/text_list_1"
-                                app:layout_constraintEnd_toEndOf="@+id/list_1"
-                                />
+                                app:layout_constraintStart_toStartOf="@+id/list_1"
+                                app:layout_constraintBottom_toBottomOf="@+id/list_1"
+                                >
+                                <TextView
+                                    android:id="@+id/list_1_inbox_text"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="match_parent"
+                                    android:text="국내여행 통합 예약"
+                                    android:textSize="13sp" />
+
+                                <ImageView
+                                    android:id="@+id/img_arrow_end_03"
+                                    android:layout_width="12dp"
+                                    android:layout_height="12dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:layout_centerVertical="true"
+                                    android:src="@drawable/img_arrow_end" />
+                            </RelativeLayout>
+
                         </androidx.constraintlayout.widget.ConstraintLayout>
                     </LinearLayout>
                     <LinearLayout
